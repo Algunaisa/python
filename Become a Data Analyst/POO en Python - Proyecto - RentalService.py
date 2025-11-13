@@ -31,7 +31,7 @@ class Vehicle:
         return "%s %s (%s)" % (self.brand, self.model, self.vehicle_type)
  
 #truck.py
-from vehicle import Vehicle
+#from vehicle import Vehicle
 
 class Truck(Vehicle):
     """A Truck requires a truck license to rent."""
@@ -91,10 +91,10 @@ class RentalService:
         print("Customer %s added to the rental service." % customer.name)
 
 #main.py
-from rental_service import RentalService 
-from vehicle import Vehicle
-from truck import Truck
-from customer import Customer
+#from rental_service import RentalService 
+#from vehicle import Vehicle
+#from truck import Truck
+#from customer import Customer
 
 rental_service = RentalService()
 
@@ -130,4 +130,5 @@ alice.rent_vehicle(motorcycle)  # Now should succeed
 
 # List available vehicles after operations
 rental_service.list_available_vehicles()        
+
             
