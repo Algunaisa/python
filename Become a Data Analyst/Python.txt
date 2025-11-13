@@ -1,0 +1,853 @@
+try and except
+
+	try:
+		value = int(input("Type a number: "))
+	except ValueError:
+		print("That wasn’t a number!")
+	except:
+		print("What was that? o_O")
+		
+	try:
+		num1 = int(input("Escribe un numero: "))
+		num2 = int(input("Escribe otro numero: "))
+		print("dividir",num1,"entre",num2,"Es igual a:", num1 / num2)
+		
+	except ValueError:
+		print("Eso no fue un numero... Intentalo de nuevo.")
+		
+	except:
+		print("Algo salio mal... que haz echo? -_-")
+
+CONVERT
+    
+    num1 = int(input("Escribe un numero: "))
+    
+    steps_int = steps.astype(int)
+    print(type(steps_int[0]))
+	
+LOOP
+	for i in range(5):
+		print("Hello!")
+		
+	Output
+	0.43s
+	Hello!
+	Hello!
+	Hello!
+	Hello!
+	Hello!
+
+	for i in range(5):
+		print("This is round", i)
+	0
+	1
+	2
+	3
+	4
+
+RANGE
+
+	The range() function can be called with one, two, or three arguments:
+	range(stop): Generates numbers starting from 0, incrementing by 1, and stopping before the stop value.
+	Python
+
+		for i in range(5):
+			print(i)
+		# Output: 0, 1, 2, 3, 4
+		
+	range(start, stop): Generates numbers starting from start, incrementing by 1, and stopping before the stop value.
+	Python
+
+		for i in range(2, 7):
+			print(i)
+		# Output: 2, 3, 4, 5, 6
+		
+	range(start, stop, step): Generates numbers starting from start, incrementing by step, and stopping before the stop value. The step can be positive (for counting up) or negative (for counting down).
+	Python
+
+		for i in range(1, 10, 2):
+			print(i)
+		# Output: 1, 3, 5, 7, 9
+
+		for i in range(5, 0, -1):
+			print(i)
+		# Output: 5, 4, 3, 2, 1
+		
+		
+WHILE
+	count = 0
+	while count < 3:
+		print("Counting:", count)
+		count = count + 1
+	
+NOTA:
+	Just like with if and for, a while loop needs a colon (:) to start the block. 
+	And the indented code under it is what gets repeated again and again, until the condition becomes False.
+
+BREAK
+
+	while True:
+    answer = input("Type 'exit' to quit: ")
+    if answer == "exit":
+        break
+    print("You typed:", answer)
+	
+CONTINUE
+	
+	for i in range(5):
+    if i == 2:
+        continue
+    print("i =", i)
+	
+	Output
+	i = 0
+	i = 1
+	i = 3
+	i = 4
+	
+EVEN NUMBERS
+
+	#Write a loop that prints numbers from 1 to 10, but skips the even ones.
+	for number in range(1, 11):
+    if number % 2 == 0:
+        continue
+    print(number)	
+
+LIST
+
+	fruits = ["apple", "banana", "cherry"]
+
+	fruits.append("orange")  # Add
+	fruits.remove("banana")  # Remove
+	print(fruits)
+	--------------------------------------
+	Output
+	['apple', 'cherry', 'orange']
+	
+	for fruit in fruits:
+		print("I Love", fruit)
+	
+    fruits = ["apple", "banana", "cherry","orange"]
+    
+    slice_list = fruits[1:2] #banana, cherry
+    
+    #######################################################
+    
+    fitness_data = ["Juliana", 7000, 5500, 10300, 8000, 1200, 2000, 5000]
+    list_daily_steps = fitness_data[1:len(fitness_data)]
+    print(list_daily_steps) # [7000, 5500, 10300, 8000, 1200, 2000, 5000]
+    
+    #######################################################
+    
+    value = fitness_list[1:]
+    
+    
+FUNCTION (define a function)
+	
+	STRUCTUURE
+	
+		def greet():        # Define a new function
+			print("Hello!") # What it does
+		
+		greet()             # Call the function
+
+	INPUT
+	
+		def greet(name):
+			print("Hello,", name)
+
+		greet("Ava")
+		greet("Zane")
+	
+	RETURNING
+		
+		def add(a, b):
+			return a + b
+
+		result = add(5, 3)
+		print(result)
+
+
+QUIZ
+	def adventure():
+		print("You stand at a fork in the road.")
+		choice = input("Do you go left or right? ")
+
+		if choice == "left":
+			print("You encounter a friendly dragon!")
+		elif choice == "right":
+			print("You find a hidden treasure chest!")
+		else:
+			print("You get lost in the woods.")
+
+	adventure()
+	
+	
+Dictionary = {"KEY":"VALUE"}
+
+    person = {
+        "name": "Ava",     # Key is "name", value is "Ava"
+        "age": 25,         # Key is "age", value is 25 (notice: no quotes around numbers)
+        "city": "Seattle"  # Strings must be in quotes, and each key-value pair ends with a comma
+    }
+
+    print(person["name"]) # Ava
+    
+    person["job"] = "Engineer"  # Added new key-value pair
+    person["age"] = 26          # Updated existing value
+
+
+    print(person) # {'name': 'Ava', 'age': 26, 'city': 'Seattle', 'job': 'Engineer'}
+    
+    for key, value in person.items():
+        print(key, ":", value)
+    
+    #Output
+    #name : Ava
+    #age : 26
+    #city : Seattle
+    #job : Engineer
+
+    #What’s happening here?
+    #person.items() gives us all the key–value pairs in the dictionary.
+    #for key, value in ... splits each pair so you can work with them separately.
+    #Inside the loop, you can print or use the key and value however you like.
+    
+    fitness_list = ["Juliana", 7000, 5500, 10300, 8000, 1200, 2000, 5000]
+    print("List looks like ", fitness_list)
+
+    key = fitness_list[0]
+    value = fitness_list[1:]
+
+    fitness_dictionary = {}
+    fitness_dictionary[key] = value
+
+    print("Dictionary looks like", fitness_dictionary)
+    
+    #Output
+    #List looks like  ['Juliana', 7000, 5500, 10300, 8000, 1200, 2000, 5000]
+    #Dictionary looks like {'Juliana': [7000, 5500, 10300, 8000, 1200, 2000, 5000]}
+
+    
+List_of_Dictionaries = [{"key1.1":"Value1.1","Key2.1":"Value2.1"},{"key1.2":"Value1.2","Key2.2":"Value2.2"}] 
+    # Each dictionary can represent a row with labeled columns (keys).
+
+    people = [
+        {"name": "Ava", "age": 25},
+        {"name": "Zane", "age": 30},
+        {"name": "Maya", "age": 22}
+    ]
+
+    for person in people:
+        print(person["name"], "is", person["age"], "years old.")
+ 
+    #Output
+    #----------------------
+    #Ava is 25 years old.
+    #Zane is 30 years old.
+    #Maya is 22 years old.
+    
+    books = [
+        {"title": "1984", "author": "George Orwell"},
+        {"title": "The Hobbit", "author": "J.R.R. Tolkien"}
+    ]
+
+    for book in books:
+        print(book['title'] , " by " , book['author'])
+        
+    #Output
+    #---------------------------------
+    #1984  by  George Orwell
+    #The Hobbit  by  J.R.R. Tolkien
+    
+    #list of dictionaries
+    People[0]["age"] # This accesses the first dictionary in the list and retrieves the "age" value.
+    
+FILE
+
+    #Write
+    with open("message.txt", "w") as file:
+        file.write("Hello from Python!")
+    
+    #Append
+    with open("message.txt", "a") as file:
+        file.write("\nAnother line!")
+    
+    #Read
+    with open("message.txt", "r") as file:
+        content = file.read()
+        print(content)  #Hello from Python!
+                        #Another line!
+        
+        
+    ##Diary
+    
+        entry = input("Write a diary entry: ")
+
+        with open("diary.txt", "a") as file:
+            file.write(entry + "\n")   # Write takes just one argument 
+    
+    ##En terminal
+    
+        > ls
+        ##Esto enlista los archivos que puedes acceder en la ruta que estamos
+        > cat diary.txt
+        ##Imprime lo que escrivimos en el documento
+        
+        Write a diary entry: Querido diario, hoy comi sandia y baile bajo la lluvia.
+        root@devpath:/usercode# ls
+        __ed_script.sh  __ed_stderr.txt  __ed_stdout.txt  diary.txt  main.py  main.sh  output
+        root@devpath:/usercode# cat diary.txt
+        Querido diario, hoy comi sandia y baile bajo la lluvia.
+        root@devpath:/usercode# ^C
+        root@devpath:/usercode#         
+ 
+    ##Concatenation 
+        
+        The + operator is used to concatenate (or join) different pieces of text together in Python.
+        
+        file.write(entry + "\n")
+    
+    ##Why use with
+    
+        with automatically opens and closes the file for us.
+        It prevents errors and makes our code cleaner.
+     
+
+#CHATPY     
+      
+      def chatbot():
+        print("Hi! I'm ChatPy. Let's chat. Type 'bye' to exit.")
+
+        while True:
+            msg = input("You: ")
+
+            if msg == "bye":
+                print("ChatPy: See you later!")
+                break
+            elif "how are you" in msg:
+                print("ChatPy: I'm just code, but I feel awesome!")
+            elif "name" in msg:
+                print("ChatPy: I'm ChatPy, your Python buddy.")
+            else:
+                print("ChatPy: Interesting!")
+
+    chatbot()
+ 
+    IN
+     
+        # The in keyword in Python is a very versatile operator and can be used in different contexts, especially when working with sequences like strings, lists, or even dictionaries.
+        # Here, we’ve used in in an if statement to check whether a value exists in a sequence (like here, to see if the phrase "how are you" is inside the user’s message).
+        
+
+#Track Your Spending (or Habits)
+    
+    def log_expense():
+        while True:
+            item = input("Enter an item (or 'done' to finish): ")
+            if item == "done":
+                break
+            amount = input("How much did you spend on it? ")
+            with open("expenses.txt", "a") as file:
+                file.write(item + ": $" + amount + "\n")
+        
+        print("All expenses saved!")
+
+    def view_expenses():
+        with open("expenses.txt", "r") as file:
+            print("Here are your expenses:")
+            print(file.read())
+
+    log_expense()
+    view_expenses()
+    
+
+#Modules (Libraries): Are a toolbox of prewritten code (functions, constants, etc.)
+    
+    #Random.choice
+    
+        import random
+
+        coin = random.choice(["heads", "tails"])
+        print("You flipped:", coin)
+        
+        import random
+        
+        computer_choice = random.choice(['rock', 'paper', 'scissors'])
+
+    #Math 
+    
+        import math
+
+        print(math.sqrt(64))       # Square root
+        print(math.pi)             # Pi constant
+
+    #Datetime 
+    
+        from datetime import datetime
+
+        now = datetime.now()
+        
+        ##now = datetime.datetime.now()  
+        ## This is only needed if you import the whole datetime module (import datetime), not the class directly.
+        
+        print("Current time:", now)
+            
+
+    #Random.randint
+
+        import random
+
+        dice = random.randint(1,20)
+        print("We rolled a", dice)
+        
+        import random
+
+        dice_1 = random.randint(1, 6)
+        print("+---+")
+        print("|", dice_1,"|")
+        print("+---+")
+        dice_2 = random.randint(1, 6)
+        print("+---+")
+        print("|", dice_2,"|")
+        print("+---+")
+        
+        
+    #Where do we find more?
+    
+        Python’s standard library includes modules like:
+            os: Interacts with files and folders
+            time: Delays, clocks
+            statistics: Mean, median, mode
+            json: Reading/writing JSON data
+
+        We can also install third-party libraries later, such as:
+            pygame: Makes games
+            matplotlib: Draws charts
+            requests: Gets data from the web
+            
+            
+    #Turtle        
+           
+        #Lines
+        
+            import turtle
+
+            pen = turtle.Turtle()
+            pen.forward(100)        
+            
+            ##This draw a 100 px line to the right --->
+            
+            ################################################
+            import turtle
+
+            pen = turtle.Turtle()
+            pen.forward(100)        ## ---->
+            pen.right(90)           ##      |
+            pen.forward(100)        ##      |
+            pen.right(90)           ##      <
+            
+            ################################################
+            import turtle
+
+            pen = turtle.Turtle()
+
+            for _ in range(4):
+                pen.forward(100)
+                pen.right(90)
+                
+            turtle.done()
+            
+            ##This makes a Square 
+            
+            ################################################
+         
+        #Color and style
+        
+            import turtle
+
+            pen = turtle.Turtle()
+
+            pen.color("blue")
+            pen.pensize(3)
+            pen.speed(2)
+            #pen.width(3)
+            pen.forward(150)
+         
+            ################################################
+         
+            import turtle
+
+            pen = turtle.Turtle()
+
+            pen.color("blue")        # Change color
+            sides = 8                # Change number of sides
+            angle = 360 / sides      # Adjust angle based on sides
+
+            for _ in range(sides):
+                pen.forward(80)
+                pen.right(angle)
+                
+            ################################################
+            
+            ##Spiral
+            
+            import turtle
+
+            pen = turtle.Turtle()
+                
+            pen.color("red")
+            for i in range(50):
+                pen.forward(i * 5)
+                pen.right(45)
+    
+    #numpy
+    
+        import numpy
+        data = numpy.loadtxt('data.txt')
+        print(data) 
+        
+        ########
+        
+        import numpy
+        num1, num2 = numpy.loadtxt('data.csv', delimiter = ',') #7,11
+        print(num1, num2) #7.0 11.0
+        
+        ########
+        
+        import numpy
+        data = numpy.loadtxt('data.csv', delimiter = ',') #685,0,0,0,0,0,0,0,0,964,934,21,623,1085,989,1113,599,667,869,1192,86,402,1040,1065,953,903,0,0,0,0,0,0,631,1178,410,447,1013,952,482,67,62,1164,977,1127,970,22,403,665,762,0,0,0,0,0,0,0,0,649,1029,1133,1000,802,946,675,768,743,786,41,856,868,209,1097,469,217,0,0,0,0,0,0,0,495,241,941,495,583,380,84,421,431,502,62,345,923,492,856,926,1150,0,0,0,0,0,0,0,0,1146,742,986,300,489,1056,95,1083,905,749,77,213,270,278,0,0,0,0,0,0,0,0,340,960,631,795,1055,585,981,423,35,92,1003,40,490,1092,579,698,0,0,0,0,0,0,1072,326,491,768,39,442,466,1077,735,377,258,370,1191,81,93,440,488,1184
+        print(data) 
+        ##    [ 685.    0.    0.    0.    0.    0.    0.    0.    0.  964.  934.   21.
+        ##      623. 1085.  989. 1113.  599.  667.  869. 1192.   86.  402. 1040. 1065.
+        ##      953.  903.    0.    0.    0.    0.    0.    0.  631. 1178.  410.  447.
+        ##     1013.  952.  482.   67.   62. 1164.  977. 1127.  970.   22.  403.  665.
+        ##      762.    0.    0.    0.    0.    0.    0.    0.    0.  649. 1029. 1133.
+        ##     1000.  802.  946.  675.  768.  743.  786.   41.  856.  868.  209. 1097.
+        ##      469.  217.    0.    0.    0.    0.    0.    0.    0.  495.  241.  941.
+        ##      495.  583.  380.   84.  421.  431.  502.   62.  345.  923.  492.  856.
+        ##      926. 1150.    0.    0.    0.    0.    0.    0.    0.    0. 1146.  742.
+        ##      986.  300.  489. 1056.   95. 1083.  905.  749.   77.  213.  270.  278.
+        ##        0.    0.    0.    0.    0.    0.    0.    0.  340.  960.  631.  795.
+        ##     1055.  585.  981.  423.   35.   92. 1003.   40.  490. 1092.  579.  698.
+        ##        0.    0.    0.    0.    0.    0. 1072.  326.  491.  768.   39.  442.
+        ##      466. 1077.  735.  377.  258.  370. 1191.   81.   93.  440.  488. 1184.]
+
+        #########
+        
+        import numpy
+        data = numpy.loadtxt('data.csv', delimiter = ',', dtype = 'str') #Juliana,685,0,0,0,0,0,0,0,0,964,934,21,623
+        print(data) 
+        #['Juliana' '685' '0' '0' '0' '0' '0' '0' '0' '0' '964' '934' '21' '623' ...
+        
+        ########
+        
+        import numpy
+
+        # Reading data from a file
+        data = numpy.loadtxt("steps.csv", delimiter = ",", dtype = str)
+
+        # Adding data to dictionary
+        data_dict = {}
+        for i in range(1, len(data)): # Choosing 1 instead of 0 to skip the header row
+            row = data[i] # <--- Picking out a list from data
+            name = row[0] # <--- Extracting name
+            steps = numpy.array(row[1:], dtype = int) # <--- Extracting list of steps as integer
+            data_dict[name] = steps # <--- Adding key:value pair to the dictionary
+
+        print(data_dict)
+
+        ###########
+        
+    #Matplotlib (Libreria)
+        
+        #Pyplot (Modulo)
+        
+            #Pie chart
+            
+                from matplotlib import pyplot
+                data = [3, 4, 5]
+                pyplot.pie(data)
+            
+                from matplotlib import pyplot
+                data = [1, 6, 3]
+                zones = ["green", "orange", "red"]
+                zone_labels = ["Excellent", "Fine", "Concerning"]
+                pyplot.pie(data, colors=zones, labels=zone_labels, autopct='%.0f%%')
+                #This will result in a pie chart where each slice is colored according to zones, labeled with zone_labels, and displays its percentage of the whole dataset.
+            
+            #Bar chart
+            
+                from matplotlib import pyplot
+                data = [3, 4, 5]
+                x_axis = ["a", "b", "c"]
+                pyplot.bar(x_axis, data)
+            
+            #Scatter plot
+                
+                from matplotlib import pyplot
+                x_values = [1, 2, 3, 4, 5, 6, 7]
+                y_values = [3000, 6000, 5000, 8000, 11000, 9000, 10000]
+                pyplot.scatter(x_values, y_values)
+            
+            #line plot
+                from matplotlib import pyplot
+                x_values = [1, 2, 3, 4, 5, 6, 7]
+                y_values = [3000, 6000, 5000, 8000, 11000, 9000, 10000]
+                pyplot.plot(x_values, y_values)
+            
+            #bubble plot / bubble chart
+            
+                from matplotlib import pyplot
+                x_values = [1, 2, 3, 4, 5, 6, 7]
+                y_values = [3000, 6000, 5000, 8000, 11000, 9000, 10000]
+                weight = [100, 150, 2000, 200, 400, 300, 250]
+                pyplot.scatter(x_values, y_values, weight)
+                
+            #
+
+    #Panadas
+        import pandas as pd  # Import pandas library for data handling
+
+        # Create a pandas Series to hold the ratings data
+        ratings = pd.Series([5, 4, 4, 3, 5, 2, 5, 1, 3, 4])
+
+        # Calculate the standard deviation: average amount data varies from the mean
+        std_dev = ratings.std()
+
+        # Calculate variance: the square of the standard deviation, showing spread in squared units
+        variance = ratings.var()
+
+        # Calculate the range: difference between max and min values in the data
+        data_range = ratings.max() - ratings.min()
+
+        # Calculate the Interquartile Range (IQR): difference between 75th percentile and 25th percentile
+        # This captures the spread of the middle 50% of the data, robust to outliers
+        iqr = ratings.quantile(0.75) - ratings.quantile(0.25)
+
+        # Print the results with two decimal places for clarity
+        print(f"Standard Deviation: {std_dev:.2f}")
+        print(f"Variance: {variance:.2f}")
+        print(f"Range: {data_range}")
+        print(f"IQR: {iqr}")
+
+##Project: Temperature Converter
+
+    def celsius_to_fahrenheit(c):
+        return (c * 9/5) + 32
+
+    def fahrenheit_to_celsius(temp):
+        return (temp - 32) * 5/9
+
+    def celsius_to_kelvin(c):
+        return c + 273.15
+
+    def kelvin_to_celsius(k):
+        return k - 273.15
+
+    def fahrenheit_to_kelvin(temp):
+        return (temp - 32) * 5/9 + 273.15
+
+    def kelvin_to_fahrenheit(k):
+        return (k - 273.15) * 9/5 + 32
+
+    def print_menu():
+        print("\n🌡️ Temperature Converter")
+        print("Choose a conversion:")
+        print("1: Celsius to Fahrenheit")
+        print("2: Fahrenheit to Celsius")
+        print("3: Celsius to Kelvin")
+        print("4: Kelvin to Celsius")
+        print("5: Fahrenheit to Kelvin")
+        print("6: Kelvin to Fahrenheit")
+        print("Q: Quit and show log")
+
+    # Store results
+    conversion_log = []
+
+    while True:
+        print_menu()
+        choice = input("Enter your choice (1-6 or Q): ").strip().lower()
+
+        if choice == 'q':
+            break
+
+        if choice not in {'1', '2', '3', '4', '5', '6'}:
+            print("❌ Invalid choice. Try again.")
+            continue
+
+        try:
+            temp = float(input("Enter the temperature to convert: "))
+        except ValueError:
+            print("⚠️ Please enter a valid number.")
+            continue
+
+        if choice == "1":
+            result = celsius_to_fahrenheit(temp)
+            msg = "{}°C → {:.2f}°F".format(temp, result)
+        elif choice == "2":
+            result = fahrenheit_to_celsius(temp)
+            msg = "{}°F → {:.2f}°C".format(temp, result)
+        elif choice == "3":
+            result = celsius_to_kelvin(temp)
+            msg = "{}°C → {:.2f}K".format(temp, result)
+        elif choice == "4":
+            result = kelvin_to_celsius(temp)
+            msg = "{}K → {:.2f}°C".format(temp, result)
+        elif choice == "5":
+            result = fahrenheit_to_kelvin(temp)
+            msg = "{}°F → {:.2f}K".format(temp, result)
+        elif choice == "6":
+            result = kelvin_to_fahrenheit(temp)
+            msg = "{}K → {:.2f}°F".format(temp, result)
+
+        print("✅ Conversion Result:", msg)
+        conversion_log.append(msg)
+
+    # Show all conversions
+    print("\n📝 Your Conversion Log:")
+    for i, entry in enumerate(conversion_log, start=1):
+        print("{}. {}".format(i, entry))
+
+    print("\nThanks for using the Temperature Converter! 🌡️")
+    
+  
+##Project: Quote Machine
+  
+    import random
+
+    # Dictionary with quote categories
+    quotes = {
+        "motivational": [
+            "Believe you can and you're halfway there. – Theodore Roosevelt",
+            "It always seems impossible until it's done. – Nelson Mandela",
+            "The best way to get started is to quit talking and begin doing. – Walt Disney",
+        ],
+        "funny": [
+            "I'm not arguing, I'm just explaining why I'm right. – Unknown",
+            "Why don’t scientists trust atoms? Because they make up everything!",
+            "I'm on a seafood diet. I see food and I eat it. – Unknown",
+        ],
+        "tech": [
+            "Talk is cheap. Show me the code. – Linus Torvalds",
+            "Programs must be written for people to read. – Harold Abelson",
+            "First, solve the problem. Then, write the code. – John Johnson",
+        ]
+    }
+
+    print("💬 Welcome to the Quote Machine!")
+    print("Available categories: motivational, funny, tech")
+
+    while True:
+        category = input("\nWhich type of quote would you like? ").strip().lower()
+        
+        if category in quotes:
+            quote = random.choice(quotes[category])
+            print("\n👉 {}".format(quote))
+        else:
+            print("❌ That category doesn't exist. Try again!")
+
+        again = input("\nWant another one? (y/n): ").strip().lower()
+        if again != 'y':
+            print("👋 See you next time! Stay inspired!")
+            break
+            
+##Project: Interactive Adventure Story
+
+    play_again = "yes"
+
+    while play_again.lower() == "yes":
+        print("\nWelcome, brave soul, to the Whispering Woods...")
+
+        name = input("What is your name, adventurer? ")
+        print(f"\nAh, {name}, a name whispered by legends...")
+
+        print("\nYou stand at the edge of an ancient forest. The trees seem to lean in, listening.")
+        choice1 = input("Do you ENTER the forest or RETURN home? (enter/return): ").lower()
+
+        if choice1 == "enter":
+            print("\nThe forest closes behind you. There's no turning back.")
+            print("After walking for hours, you find a fork in the path.")
+
+            choice2 = input("Do you take the LEFT path toward the glowing mushrooms, or the RIGHT path into the dark fog? (left/right): ").lower()
+
+            if choice2 == "left":
+                print("\nYou step carefully through the glowing grove. A peaceful spirit appears and offers you a blessing of wisdom.")
+                print("You gain insight that will guide you in future adventures.")
+            elif choice2 == "right":
+                print("\nThe fog thickens. Strange whispers surround you. A shadow leaps out—it’s a mischievous forest fox!")
+                print("You chase it away with your courage and gain its respect. It leads you safely out.")
+            else:
+                print("\nYou hesitate too long, and the paths vanish. The forest shifts, and you're gently returned to the edge.")
+
+        elif choice1 == "return":
+            print("\nYou turn back, heart still filled with curiosity. Maybe next time, you'll take that first step.")
+        else:
+            print("\nThe forest doesn't understand your hesitation. You are gently turned away by unseen forces.")
+
+        play_again = input("\nAdventure complete! Would you dare to embark again? (yes/no): ")
+        if play_again.lower() == "yes":
+            print("The forest awaits your return, bold adventurer!")
+        else:
+            print("Farewell, traveler! Until next time!")
+            
+            
+            
+            
+##Project: Number Guessing Game (with Personality)
+            
+    import random
+
+    best_score = None
+
+    play_again = "yes"
+    while play_again.lower() == "yes":
+        secret_number = random.randint(1, 100)
+        attempts = 0
+        guessed_correctly = False
+
+        print("\n🎯 Welcome to the Number Guessing Game!")
+        print("I'm thinking of a number between 1 and 100.")
+
+        while not guessed_correctly:
+            try:
+                guess = int(input("Take a guess: "))
+                attempts += 1
+
+                if guess < secret_number:
+                    print("Too low! Try again.")
+                elif guess > secret_number:
+                    print("Too high! Try again.")
+                else:
+                    print(f"🎉 Congratulations! You guessed it in {attempts} attempts.")
+                    guessed_correctly = True
+            except ValueError:
+                print("Please enter a valid number.")
+
+        if best_score is None or attempts < best_score:
+            best_score = attempts
+            print(f"🏅 New record! Fewest attempts: {best_score}")
+        else:
+            print(f"Your best score remains: {best_score} attempts.")
+
+        play_again = input("Want to play again? (yes/no): ")
+        if play_again.lower() != "yes":
+            print("Thanks for playing! Come back soon!")
+            
+######666######
+
+##Final Project: Personal Habit Tracker
+
+###
+
+##What’s next?
+
+    #Keep building! Here are a few ways to level up:
+
+        #Add a GUI (graphical interface) with tkinter.
+        #Connect to APIs and fetch live data.
+        #Try pygame for game development.
+        #Explore pandas and matplotlib for data projects.
+
+
+
