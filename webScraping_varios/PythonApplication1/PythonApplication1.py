@@ -2,9 +2,12 @@
 # https://realpython.com/python-web-scraping-practical-introduction/
 ###
 
+# for open url
 from urllib.request import urlopen
 # for Regular expressions:
 import re
+# for soup
+#from bs4  import BeautifulSoup
 
 def printSlash():
     print("\n-------------------------------------------------------------\n\n")
@@ -16,6 +19,11 @@ def getHTML(god):
     html = html_bytes.decode("utf-8")
     print("\tHTML: \n",html)
     return html
+
+def saveHTML(html,god):
+    #Write
+    with open("html_"+god+".txt", "w") as file:
+        file.write(html)
 
 def getTitleByLen(god):
     html = getHTML(god)
@@ -41,19 +49,26 @@ def getTitleByRe(god):
     print("\tTitle: \n",title)
     return title
 
+#def getSoup(html):
+#    return BeautifulSoup(html, "html.parser")
+
 #poseidon
 #aphrodite
 #dionysus
 
 title = getTitleByLen("aphrodite")
-
 printSlash()
 
 title = getTitleByRe("poseidon")
-
 printSlash()
 
 title = getTitleByRe("dionysus")
-
 printSlash()
 
+# In Sell (CMD)
+# $ python -m pip install beautifulsoup4
+# $ py -m pip install beautifulsoup4
+# no se pudo por el certificado :(
+
+#soup = getSoup(getHTML("dionysus"))
+#printSlash()
