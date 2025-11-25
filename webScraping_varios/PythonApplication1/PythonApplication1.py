@@ -7,7 +7,7 @@ from urllib.request import urlopen
 # for Regular expressions:
 import re
 # for soup
-#from bs4  import BeautifulSoup
+from bs4 import BeautifulSoup
 
 def printSlash():
     print("\n-------------------------------------------------------------\n\n")
@@ -49,8 +49,8 @@ def getTitleByRe(god):
     print("\tTitle: \n",title)
     return title
 
-#def getSoup(html):
-#    return BeautifulSoup(html, "html.parser")
+def getSoup(html):
+    return BeautifulSoup(html, "html.parser")
 
 #poseidon
 #aphrodite
@@ -70,5 +70,11 @@ printSlash()
 # $ py -m pip install beautifulsoup4
 # no se pudo por el certificado :(
 
-#soup = getSoup(getHTML("dionysus"))
-#printSlash()
+soup = getSoup(getHTML("dionysus"))
+print("\tTitle with Soup: \n" + soup.title.string)
+print("\tget_text:\n" + soup.get_text())
+printSlash()
+
+image1, image2 = soup.find_all("img")
+image1.name
+printSlash()
